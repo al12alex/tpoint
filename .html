@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAU INNO TECH</title>
+    <style>
+        /* ... (Your existing styles) ... */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: linear-gradient(to bottom, #FFFFE0, #90EE90, #FFE4E1, white);
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            margin-left: 20px;
+            color: rgb(255, 69, 0);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin-right: 20px;
+        }
+
+        nav li {
+            position: relative;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        nav .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        nav .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        nav li:hover .dropdown-content {
+            display: block;
+        }
+
+        .section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .section img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .section .moving-text {
+            white-space: nowrap;
+            overflow: hidden;
+            animation: marquee 25s linear infinite;
+            color: green;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .section button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px;
+        }
+
+        .form-container {
+            width: 300px;
+            margin: 20px auto;
+            text-align: left;
+        }
+
+        .form-container label, .form-container input {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .detail-text {
+            display: none;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav li {
+                width: 100%;
+            }
+
+            nav .dropdown-content {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+            }
+        }
+        .mega_menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .col-md-6, .col-lg-3 {
+        width: 100%; /* Default width for smaller screens */
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    @media (min-width: 768px) {
+        .col-md-6 {
+            width: 50%;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .col-lg-3 {
+            width: 25%;
+        }
+    }
+
+    .list-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .jtp-list-group-item {
+        padding: 10px 15px;
+        border-bottom: 1px solid #eee;
+        text-decoration: none;
+        color: #333;
+        display: block;
+        transition: background-color 0.3s;
+    }
+
+    .jtp-list-group-item:last-child {
+        border-bottom: none;
+    }
+
+    .jtp-list-group-item:hover {
+        background-color: #f0f0f0;
+    }
+
+    .jtp-list-group-item.list-group-item-action {
+        text-decoration: none;
+    }
+
+    .jtp-list-group-item h3 {
+        margin-top: 0;
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+    .jtp-backend{
+        padding-bottom: 20px;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">MAU INNO TECH</div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="showAction('settings')">Settings</a>
+                        <a href="#" onclick="showAction('feedback')">Feedback</a>
+                        <a href="#" onclick="showAction('profile')">Profile</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">About Us</a>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="showAction('aboutMkau')">About MAU</a>
+                        <a href="#">Developers Info</a>
+                        <a href="#">Office Info</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                    <div class="dropdown-content">
+                        <a href="#">Web Development</a>
+                        <a href="#">Software Development</a>
+                        <a href="#">Other Creativity</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Tutorials</a>
+                    <div class="dropdown-content">
+                        <a href="#">Video</a>
+                        <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>
+                        <a href="https://www.udemy.com/" target="_blank">Udemy</a>
+                        <a href="https://www.tpointtech.com/" target="_blank">JavaTPoint</a>
+                        <a href="https://www.udacity.com/" target="_blank">Udacity</a>
+                        <a href="https://www.freecodecamp.org/" target="_blank">FreeCodeCamp</a>
+                        <a href="https://graceacademy.net/" target="_blank">Greace Academy</a>
+                        <a href="https://www.mygreatlearning.com/" target="_blank">Great learning</a>
+                        <a href="#" onclick="showDetails('exercises-details'); return false;">Exercises</a>
+                        <a href="#">Exam</a>
+                        <a href="#">Quiz</a>
+                        <a href="#">Practice</a>
+                    </div>
+                </li>
+                <li><a href="#register">Register</a></li>
+                <li><a href="#login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="section" id="office">
+        <h2>Office Room</h2>
+        <img src="placeholder-office.jpg" alt="Office Room">
+        <div class="moving-text">Welcome to our innovative workspace!</div>
+        <p>Explore our collaborative environment.</p>
+        <button onclick="showDetails('office-details')">See Details</button>
+        <div id="office-details" class="detail-text"></div>
+    </section>
+
+    <section class="section" id="technology">
+        <h2>Technology</h2>
+        <p>Explore our technology resources.</p>
+        <div class="mega_menu">
+            <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                <div class="list-group list-group-flush">
+                  <h3 class="jtp-list-group-item">Technical Interview</h3>
+                  <a href="/python-interview-questions" class="jtp-list-group-item list-group-item-action">Python Interview Questions</a>
+                  <a href="/corejava-interview-questions" class="jtp-list-group-item list-group-item-action">Java Interview Questions</a>
+                  <a href="/dot-net-interview-questions" class="jtp-list-group-item list-group-item-action">.Net Interview Questions</a>
+                  <a href="/cpp-interview-questions" class="jtp-list-group-item list-group-item-action">C++ Interview Questions</a>
+                  <a href="/react-interview-questions" class="jtp-list-group-item list-group-item-action">React Interview Questions</a>
+                  <a href="/node-js-interview-questions" class="jtp-list-group-item list-group-item-action">Node.js Interview Questions</a>
+                  <a href="/angular-interview-questions" class="jtp-list-group-item list-group-item-action">Angular Interview Questions</a>
+                  <a href="/sql-interview-questions" class="jtp-list-group-item list-group-item-action">SQL Interview Questions</a>
+                  <a href="/hr-interview-questions" class="jtp-list-group-item list-group-item-action">HR Interview Questions</a>
+                  
+                  <h3 class="jtp-list-group-item">Java Interview</h3>
+                  <a href="/spring-boot-interview-questions" class="jtp-list-group-item list-group-item-action">Spring Boot Interview Questions</a>
+                  <a href="/spring-interview-questions" class="jtp-list-group-item list-group-item-action">Spring Interview Questions</a>
+                  <a href="/hibernate-interview-questions" class="jtp-list-group-item list-group-item-action">Hibernate Interview Questions</a>
+                  <a href="/jdbc-interview-questions" class="jtp-list-group-item list-group-item-action">JDBC Interview Questions</a>
+                  <a href="/servletinterview" class="jtp-list-group-item list-group-item-action">Servlet Interview Questions</a>
+                  <a href="/maven-interview-questions" class="jtp-list-group-item list-group-item-action">Maven Interview Questions</a>
+                  <a href="/jenkins-interview-questions" class="jtp-list-group-item list-group-item-action">Jenkins Interview Questions</a>
+                 
+                  <h3 class="jtp-list-group-item">Python</h3>
+                  <a href="/django-interview-questions-and-answers" class="jtp-list-group-item list-group-item-action">Django Interview Questions</a>
+                  <a href="/python-pandas-interview-questions" class="jtp-list-group-item list-group-item-action">Pandas Interview Questions</a>
+                  <a href="/expressjs-interview-questions" class="jtp-list-group-item list-group-item-action">Express.js Interview Questions</a>
+                  <a href="/python-coding-interview-questions" class="jtp-list-group-item list-group-item-action">Python Coding Interview Questions</a>
+                  <a href="/python-interview-questions-for-five-years-experienced" class="jtp-list-group-item list-group-item-action">Python Interview Questions for 5 Years</a>
+                 
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                <div class="list-group list-group-flush">
+                  <h3 class="jtp-list-group-item">Web Interview</h3>
+                  <a href="/html-interview-questions" class="jtp-list-group-item list-group-item-action">HTML Interview Questions</a>
+                  <a href="/css-interview-questions" class="jtp-list-group-item list-group-item-action">CSS Interview Questions</a>
+                  <a href="/javascript-interview-questions" class="jtp-list-group-item list-group-item-action">JavaScript Interview Questions</a>
+                  <a href="/jquery-interview-questions" class="jtp-list-group-item list-group-item-action">Jquery Interview Questions</a>
+                  <a href="/php-interview-questions" class="jtp-list-group-item list-group-item-action">PHP Interview Questions</a>
+                  <a href="/laravel-interview-questions" class="jtp-list-group-item list-group-item-action">Laravel Interview Questions</a>
+                  <a href="/ajax-interview-questions" class="jtp-list-group-item list-group-item-action">AJAX Interview Questions</a>
+                  <a href="/front-end-developer-interview-questions" class="jtp-list-group-item list-group-item-action">Front-End Developer Interview Questions</a>
+                  <a href="/jquery-interview-questions" class="jtp-list-group-item list-group-item-action">jQuery Interview Questions</a>
+                  
+                  <h3 class="jtp-list-group-item">Database Interview</h3>
+                  <a href="/dbms-interview-questions" class="jtp-list-group-item list-group-item-action">DBMS Interview Questions</a>
+                  <a href="/sql-interview-questions" class="jtp-list-group-item list-group-item-action">SQL Interview Questions</a>
+                  <a href="/pl-sql-interview-questions" class="jtp-list-group-item list-group-item-action">PL/SQL Interview Questions</a>
+                  <a href="/oracle-interview-questions" class="jtp-list-group-item list-group-item-action">Oracle Interview Questions</a>
+                  <a href="/mysql-interview-questions" class="jtp-list-group-item list-group-item-action">MySQL Interview Questions</a>
+                  <a href="/mongodb-interview-questions" class="jtp-list-group-item list-group-item-action">MongoDB Interview Questions</a>
+                  <a href="/redis-interview-questions-and-answers" class="jtp-list-group-item list-group-item-action">Redis Interview Questions</a>
+                  <h3 class="jtp-list-group-item">B.Tech / MCA</h3>
+                  <a href="/dbms-interview-questions" class="jtp-list-group-item list-group-item-action">DBMS Interview Questions</a>
+                  <a href="/operating-system-interview-questions" class="jtp-list-group-item list-group-item-action">Operating System Interview Questions</a>
+                  <a href="/oops-interview-questions" class="jtp-list-group-item list-group-item-action">OOPs Interview Questions</a>
+                  <a href="/data-structure-interview-questions" class="jtp-list-group-item list-group-item-action">DSA Interview Questions</a>
+                  <a href="/networking-interview-questions" class="jtp-list-group-item list-group-item-action">Computer Networks Interview Questions</a>
+                 
+                </div>
+                
+              </div>
+              <div class="col-md-6 col-lg-3 mb-3 mb-md-0 jtp-backend">
+                <div class="list-group list-group-flush">
+                  
+                  <h3 class="jtp-list-group-item">Important Interview</h3>
+                  <a href="/c" class="jtp-list-group-item list-group-item-action">C Interview Questions</a>
+                  <a href="/power" class="jtp-list-group-item list-group-item-action">Power BI Interview Questions</a>
+                  <a href="/c" class="jtp-list-group-item list-group-item-action">C# Interview Questions</a>
+                  <a href="/excel-interview-questions" class="jtp-list-group-item list-group-item-action">Excel Interview Questions</a>
+                  <a href="/c-sharp-interview-questions" class="jtp-list-group-item list-group-item-action">C# Interview Questions</a>
+                  <a href="/machine-learning-interview-questions" class="jtp-list-group-item list-group-item-action">Machine Learning Interview Questions</a>
+                  <a href="/aws-interview-questions" class="jtp-list-group-item list-group-item-action">AWS Interview Questions</a>
+                  <a href="/microservices-interview-questions" class="jtp-list-group-item list-group-item-action">Microservices Interview Questions</a>
+                  <a href="/mysql-interview-questions" class="jtp-list-group-item list-group-item-action">MySQL Interview Questions</a>
+                  
+
+                  <h3 class="jtp-list-group-item">Software Testing Interview</h3>
+                  <a href="/software-testing-interview-questions" class="jtp-list-group-item list-group-item-action">Manual Testing Interview Questions</a>
+                  <a href="/selenium-interview-questions" class="jtp-list-group-item list-group-item-action">Selenium Interview Questions</a>
+                  <a href="/api-testing-interview-questions" class="jtp-list-group-item list-group-item-action">API Testing Interview Questions</a>
+                  <a href="/etl-testing-interview-questions" class="jtp-list-group-item list-group-item-action">ETL Testing Interview Questions</a>
+                  <a href="/mobile-testing-interview-questions" class="jtp-list-group-item list-group-item-action">Mobile Testing Interview Questions</a>
+                  
+                  <h3 class="jtp-list-group-item">Company Interviews</h3>
+                  <a href="/ibm-interview-questions" class="jtp-list-group-item list-group-item-action">IBM Interview Questions</a>
+                  <a href="/adobe-interview-questions" class="jtp-list-group-item list-group-item-action">Adobe Interview Questions</a>
+                  <a href="/microsoft-interview-questions" class="jtp-list-group-item list-group-item-action">Microsoft Interview Questions</a>
+                  <a href="/amazon-interview-questions" class="jtp-list-group-item list-group-item-action">Amazon Interview Questions</a>
+                  <a href="/tcs-interview-questions" class="jtp-list-group-item list-group-item-action">TCS Interview Questions</a>
+                  <a href="/wipro-interview-questions" class="jtp-list-group-item list-group-item-action">Wipro Interview Questions</a>
+                  <a href="/accenture-interview-questions" class="jtp-list-group-item list-group-item-action">Accenture Interview Questions</a>
+                  </div>
+              </div>
+        </div>
+        </div>
+      </div>
+  </div>
+  </div>
+
+    </section>
+
+    <section class="section" id="exercises-details">
+        <h2>Exercises</h2>
+        <p>Explore our exercises</p>
+        <a href="https://www.w3schools.com/exercise/index.php" target="_blank">W3Schools Exercises</a>
+    </section>
+
+    <section class="section" id="register">
+        <h2>Register</h2>
+        <div class="form-container">
+            <form id="registerForm" onsubmit="return validateRegister()">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+                <label for="department">Department:</label>
+                <select id="department" name="department">
+                    <option value="cs">CS</option>
+                    <option value="se">SE</option>
+                    <option value="it">IT</option>
+                    <option value="other">Other</option>
+                </select>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="section" id="login">
+        <h2>Login</h2>
+        <div class="form-container">
+            <form id="loginForm" onsubmit="return validateLogin()">
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" name="email">
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="password">
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </section>
+    <section id="action-area" style="display:none">
+        <div id="settings-content" style="display:none">settings area</div>
+        <div id="feedback-content" style="display:none">feedback area</div>
+        <div id="profile-content" style="display:none">profile area</div>
+        <div id="aboutMkau-content" style="display:none">about mkau area</div>
+    </section>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/" class="fa fa-facebook" target="_blank">Facebook</a>
+            <a href="https://twitter.com/" class="fa fa-twitter" target="_blank">Twitter</a>
+            <a href="https://www.instagram.com/" class="fa fa-instagram" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com/" class="fa fa-linkedin" target="_blank">LinkedIn</a>
+        </div>
+        <p>&copy; 2024 MAU Inno Tech. All rights reserved.</p>
+    </footer>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        function showDetails(detailId) {
+            const detailText = document.getElementById(detailId);
+            if (detailText.style.display === 'none' || detailText.style.display === '') {
+                detailText.style.display = 'block';
+            } else {
+                detailText.style.display = 'none';
+            }
+        }
+        function showAction(actionId){
+            const actionArea = document.getElementById("action-area");
+            actionArea.style.display = "block";
+            const actionContent = document.getElementById(actionId+"-content");
+            actionContent.style.display = "block";
+            const allActions = ["settings","feedback","profile","aboutMkau"];
+            allActions.filter(x=>x!=actionId).forEach(x=>{
+                document.getElementById(x+"-content").style.display="none";
+            })
+        }
+
+        function validateRegister() {
+            // ... (Your existing validation) ...
+        }
+
+        function validateLogin() {
+            // ... (Your existing validation) ...
+        }
+    </script>
+</body>
+</html>
